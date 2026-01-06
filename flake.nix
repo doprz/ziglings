@@ -20,7 +20,9 @@
       perSystem =
         { pkgs, system, ... }:
         let
-          zig = inputs.zig.packages.${system}.master;
+          # NOTE: v0.16.0-dev.1976 is broken, see: https://codeberg.org/ziglings/exercises/issues/345
+          # Using master-2025-12-28 (v0.16.0-dev.1859)
+          zig = inputs.zig.packages.${system}.master-2025-12-28;
           # zls = inputs.zls.packages.${system}.zls;
         in
         {
